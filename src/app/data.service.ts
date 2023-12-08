@@ -19,7 +19,7 @@ export class DataService {
     
       getCharacters(): Observable<Character[]> {
         return this.http.get<any>(`${this.BASE_URL}/character`).pipe(
-          map((data: any) => this.obj2ArrayCharacters(data.results))
+          map((data: any) => this.obj2ArrayCharacters(data))
         );
       }
       private fetchAllPages(url: string, characters: Character[] = []): Observable<Character[]> {
