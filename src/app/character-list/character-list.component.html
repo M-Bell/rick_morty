@@ -1,1 +1,3 @@
-<p>character-list works!</p>
+<div *ngFor="let character of characters">
+    <app-character [name]="character.name" [img]="character.img"></app-character>
+ </div>
