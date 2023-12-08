@@ -16,7 +16,7 @@ constructor(private dataservice: DataService){
 }
 
 ngOnInit(): void {
-  this.dataservice.getCharacters().subscribe(val => this.characters = val)
+  this.dataservice.getAllCharacters().subscribe(val => this.characters = val)
   console.log(this.characters.length)
 }
 
