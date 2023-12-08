@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Character } from '../character';
 
 @Component({
   selector: 'app-character',
@@ -6,7 +7,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./character.component.css']
 })
 export class CharacterComponent {
-  @Input() name:string | undefined;
-  @Input() img:string | undefined;
+  @Input() character: Character | undefined;
 
+  constructor(){
+  }
+
+  
 }

@@ -1,5 +1,5 @@
 <div class="character">
-    <h3>Name: {{ name }}</h3>
-    <img [src]="img" alt="Character Image">
+    <h3>Name: {{ character?.name }}</h3>
+    <img [src]="character?.image" alt="Character Image">
     <a routerLink="/character/1" style="color: blue;">About</a>
 </div>
