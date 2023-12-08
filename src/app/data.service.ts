@@ -17,14 +17,9 @@ export class DataService {
         return this.fetchAllPages(`${this.BASE_URL}/character`);
       }
     
-      getCharacters(): Observable<Character[]> {
-        return this.http.get<any>(`${this.BASE_URL}/character`).pipe(
-          map((data: any) => this.obj2ArrayCharacters(data))
-        );
-      }
-      private fetchAllPages(url: string, characters: Character[] = []): Observable<Character[]> {
+    private fetchAllPages(url: string, characters: Character[] = []): Observable<Character[]> {
         return this.http.get<any>(url).pipe(
-          switchMap((data: any) => {
+            switchMap((data: any) => {
             const results = data.results || [];
             characters.push(...this.obj2ArrayCharacters(results));
     
@@ -36,7 +31,7 @@ export class DataService {
             }
           })
         );
-      }
+    }
 /*
     getCocktailById(id: string): Observable<Cocktail> {
         return this.http.get(this.BASE_URL + '/lookup.php?i=' + id).pipe(
@@ -71,7 +66,7 @@ export class DataService {
 
     protected obj2ArrayCharacters(obj: any): Character[] {
         console.log(obj)
-        return obj.results.map((character: any): Character => ({
+        return obj.map((character: any): Character => ({
           id: character.id,
           name: character.name,
           status: character.status,
