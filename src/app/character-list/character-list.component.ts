@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { Character } from '../character';
 
 @Component({
   selector: 'app-character-list',
@@ -9,13 +11,13 @@ export class CharacterListComponent implements OnInit {
 
 characters: Array<any>;
 
-constructor(){
-  this.characters = new Array<any>;
+constructor(private dataservice: DataService){
+  this.characters = new Array<Character>
 }
 
 ngOnInit(): void {
-  this.characters.push({name: "Rick", img: "rnd"})
-  this.characters.push({name: "Morty", img: "rnd"})
+  this.dataservice.getCharacters().subscribe(val => this.characters.push(val))
+  console.log(this.characters.length)
 }
 
 }
