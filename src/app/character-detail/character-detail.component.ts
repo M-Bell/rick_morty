@@ -18,7 +18,6 @@ export class CharacterDetailComponent implements OnInit {
   ngOnInit(): void {
     let id = 0
     this.route.params.subscribe(params => {
-      // Get the 'paramName' query parameter value
       id = params['id'];
     });
 

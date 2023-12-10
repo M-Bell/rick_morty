@@ -1,1 +1,15 @@
-<p>episode-detail works!</p>
+<div *ngIf="episode">
+    <h2>{{ episode.name }}</h2>
+    <p><strong>Episode ID:</strong> {{ episode.id }}</p>
+    <p><strong>Air Date:</strong> {{ episode.air_date }}</p>
+    <p><strong>Episode:</strong> {{ episode.episode }}</p>
+  
+    <div *ngIf="episode.characters && episode.characters.length > 0">
+      <h3>Characters</h3>
+      <ul>
+        <li *ngFor="let characterUrl of episode.characters">
+          <a [href]="characterUrl" target="_blank" style="color: black;">Character URL</a>
+        </li>
+      </ul>
+    </div>
+  </div>

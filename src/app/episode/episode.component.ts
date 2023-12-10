@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-episode',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./episode.component.css']
 })
 export class EpisodeComponent {
+  @Input() episode: any;
+  detailUrl: string|undefined;
+
+  constructor(){
+    
+  }
+
+  ngOnInit(): void {
+    this.detailUrl="/episode/"+this.episode?.id
+  }
 
 }
