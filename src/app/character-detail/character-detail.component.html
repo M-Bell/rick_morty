@@ -1,1 +1,29 @@
-<p>character-detail works!</p>
+<!-- character.component.html -->
+
+<div *ngIf="character">
+    <h2>{{ character.name }}</h2>
+    <img [src]="character.image" alt="{{ character.name }} image" style="max-width: 300px;">
+  
+    <div>
+      <h3>Details</h3>
+      <ul>
+        <li><strong>ID:</strong> {{ character.id }}</li>
+        <li><strong>Status:</strong> {{ character.status }}</li>
+        <li><strong>Species:</strong> {{ character.species }}</li>
+        <li><strong>Type:</strong> {{ character.type }}</li>
+        <li><strong>Gender:</strong> {{ character.gender }}</li>
+        <li><strong>Origin:</strong> {{ character.origin.name }}</li>
+        <li><strong>Location:</strong> {{ character.location.name }}</li>
+      </ul>
+    </div>
+  
+    <div>
+      <h3>Episodes</h3>
+      <ul>
+        <li *ngFor="let episode of character.episode">
+          <a [href]="episode" target="_blank" style="color: black;">Episode URL</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
