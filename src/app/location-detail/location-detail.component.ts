@@ -9,17 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./location-detail.component.css']
 })
 export class LocationDetailComponent {
-  location: Location = {
-    id: 1,
-    name: 'Earth C-137',
-    type: 'Planet',
-    dimension: 'Dimension C-137',
-    residents: [
-      'https://api.example.com/characters/1',
-      'https://api.example.com/characters/2',
-      'https://api.example.com/characters/3'
-    ]
-  };
+  location: Location | undefined
 
   constructor(private dataService: DataService, private route: ActivatedRoute){
 
@@ -31,9 +21,6 @@ export class LocationDetailComponent {
       id = params['id'];
     });
 
-    //-----Change to getEpisodesById-----
-    // this.episode = this.dataService.getAllCharacters().subscribe(val => {
-    //   this.episode = val.at(id-1)
-    // });
+    this.dataService.getLocationById(id-1).subscribe(val => this.location = val);
   }
 }

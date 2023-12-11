@@ -8,37 +8,13 @@ import { Location } from '../location';
   styleUrls: ['./locations-list.component.css']
 })
 export class LocationsListComponent {
-  locations: Location[] = [
-    {
-      id: 1,
-      name: 'Earth C-137',
-      type: 'Planet',
-      dimension: 'Dimension C-137',
-      residents: [
-        'https://api.example.com/characters/1',
-        'https://api.example.com/characters/2',
-        'https://api.example.com/characters/3'
-      ]
-    },
-    {
-      id: 2,
-      name: 'Citadel of Ricks',
-      type: 'Space station',
-      dimension: 'unknown',
-      residents: [
-        'https://api.example.com/characters/4',
-        'https://api.example.com/characters/5',
-        'https://api.example.com/characters/6'
-      ]
-    },
-    // Add more locations as needed
-  ];
+  locations: Location[]
 
-  constructor(private dataservice: DataService){
-    // this.episodes = new Array<Episode>
+  constructor(private dataService: DataService){
+    this.locations = new Array<Location>
   }
 
   ngOnInit(): void {
-    //this.dataservice.getAllEpisodes().subscribe(val => this.episodes = val)
+    this.dataService.getAllLocations().subscribe(val => this.locations = val)
   }
 }

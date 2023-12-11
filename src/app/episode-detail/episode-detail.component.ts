@@ -9,17 +9,7 @@ import { Episode } from '../episode';
   styleUrls: ['./episode-detail.component.css']
 })
 export class EpisodeDetailComponent {
-  episode: Episode = {
-    id: 1,
-    name: 'Episode 1',
-    air_date: 'January 1, 2023',
-    episode: 'S01E01',
-    characters: [
-      'https://api.example.com/characters/1',
-      'https://api.example.com/characters/2',
-      'https://api.example.com/characters/3'
-    ]
-  };
+  episode: Episode | undefined
 
   constructor(private dataService: DataService, private route: ActivatedRoute){
 
@@ -31,9 +21,6 @@ export class EpisodeDetailComponent {
       id = params['id'];
     });
 
-    //-----Change to getEpisodesById-----
-    // this.episode = this.dataService.getAllCharacters().subscribe(val => {
-    //   this.episode = val.at(id-1)
-    // });
+    this.dataService.getEpisodeById(id-1).subscribe(val => this.episode = val);
   }
 }
