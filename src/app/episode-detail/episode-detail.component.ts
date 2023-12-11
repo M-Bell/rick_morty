@@ -9,7 +9,7 @@ import { Episode } from '../episode';
   styleUrls: ['./episode-detail.component.css']
 })
 export class EpisodeDetailComponent {
-  episode: Episode | undefined
+  episode: any
 
   constructor(private dataService: DataService, private route: ActivatedRoute){
 
@@ -22,5 +22,6 @@ export class EpisodeDetailComponent {
     });
 
     this.dataService.getEpisodeById(id).subscribe(val => this.episode = val);
+    this.dataService.getEpisodeCharactersByEpisodeId(id).subscribe(val => this.episode.characters = val);
   }
 }

@@ -99,6 +99,24 @@ export class DataService {
         })
       );
     }
+
+    getEpisodeCharactersByEpisodeId(id: number): Observable<Character[]> {
+      return this.getEpisodeById(id).pipe(
+        switchMap((episode: Episode) => {
+          const characterIds: number[] = episode.characters.map((characterUrl: string) => {
+            const splitUrl = characterUrl.split('/');
+            return parseInt(splitUrl[splitUrl.length - 1], 10);
+          });
+
+          const characterString: string = characterIds.join(',');
+          console.log(characterString)
+          return this.http.get<any>(`${this.BASE_URL}/character/${characterString}`).pipe(
+            map((episodesData: any[]) => episodesData.map(data => this.objToCharacter(data)))
+          );
+        })
+      );
+    }
+    
       getCharacterById(id: number): Observable<Character> {
         return this.http.get<any>(`${this.BASE_URL}/character/${id}`).pipe(
           map((data: any) => this.objToCharacter(data))
