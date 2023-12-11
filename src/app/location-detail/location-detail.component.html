@@ -7,8 +7,10 @@
     <div *ngIf="location.residents && location.residents.length > 0">
       <h3>Residents</h3>
       <ul>
-        <li *ngFor="let residentUrl of location.residents">
-          <a [href]="residentUrl" target="_blank" style="color: black;">Resident URL</a>
+        <li *ngFor="let loc of location.residents">
+          <a [routerLink]="'/character/' + loc.id" style="color: black;">
+            {{ loc.name }}
+          </a>
         </li>
       </ul>
     </div>

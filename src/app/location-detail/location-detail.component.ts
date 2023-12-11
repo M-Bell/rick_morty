@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./location-detail.component.css']
 })
 export class LocationDetailComponent {
-  location: Location | undefined
+  location: any
 
   constructor(private dataService: DataService, private route: ActivatedRoute){
 
@@ -22,5 +22,6 @@ export class LocationDetailComponent {
     });
 
     this.dataService.getLocationById(id).subscribe(val => this.location = val);
+    this.dataService.getLocationCharactersByLocationId(id).subscribe(val => this.location.residents = val)
   }
 }
