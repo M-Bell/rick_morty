@@ -82,7 +82,23 @@ export class DataService {
   
       return this.fetchAllPages<Episode>(apiUrl, this.objToEpisode.bind(this));
     }
-      
+
+    getCharacterEpisodesByCharacterId(id: number): Observable<Episode[]> {
+      return this.getCharacterById(id).pipe(
+        switchMap((character: Character) => {
+          const episodeIds: number[] = character.episode.map((episodeUrl: string) => {
+            const splitUrl = episodeUrl.split('/');
+            return parseInt(splitUrl[splitUrl.length - 1], 10);
+          });
+
+          const episodesString: string = episodeIds.join(',');
+          console.log(episodesString)
+          return this.http.get<any>(`${this.BASE_URL}/episode/${episodesString}`).pipe(
+            map((episodesData: any[]) => episodesData.map(data => this.objToEpisode(data)))
+          );
+        })
+      );
+    }
       getCharacterById(id: number): Observable<Character> {
         return this.http.get<any>(`${this.BASE_URL}/character/${id}`).pipe(
           map((data: any) => this.objToCharacter(data))

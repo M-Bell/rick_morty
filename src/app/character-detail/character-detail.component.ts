@@ -24,8 +24,6 @@ export class CharacterDetailComponent implements OnInit {
 
     //-----Change to getCharacterById-----
     this.character = this.dataService.getCharacterById(id).subscribe(val => this.character = val);
+    this.dataService.getCharacterEpisodesByCharacterId(id).subscribe(val => this.character.episode = val);
   }
-
-  
-  
 }
