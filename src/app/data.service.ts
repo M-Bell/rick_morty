@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { filter, map, Observable, of, switchMap } from 'rxjs';
 import { Character } from './character';
+import { Location } from './location';
+import { Episode } from './episode';
 
 @Injectable({
   providedIn: 'root'
@@ -13,70 +15,151 @@ export class DataService {
     constructor(private http: HttpClient) { }
 
 
-    getAllCharacters(): Observable<Character[]> {
-        return this.fetchAllPages(`${this.BASE_URL}/character`);
+    getAllCharacters(
+      name?: string,
+      status?: string,
+      species?: string,
+      type?: string,
+      gender?: string
+    ): Observable<Character[]> {
+  
+      let apiUrl = `${this.BASE_URL}/character/`;
+  
+      const queryParams = new URLSearchParams();
+  
+      if (name) queryParams.set('name', name);
+      if (status) queryParams.set('status', status);
+      if (species) queryParams.set('species', species);
+      if (type) queryParams.set('type', type);
+      if (gender) queryParams.set('gender', gender);
+  
+      const queryString = queryParams.toString();
+      if (queryString) {
+        apiUrl += `?${queryString}`;
       }
+  
+      return this.fetchAllPages<Character>(apiUrl, this.objToCharacter.bind(this));
+    }
     
-    private fetchAllPages(url: string, characters: Character[] = []): Observable<Character[]> {
+    getAllLocations(
+      name?: string,
+      type?: string,
+      dimension?: string
+    ): Observable<Location[]> {
+  
+      let apiUrl = `${this.BASE_URL}/location/`;
+  
+      const queryParams = new URLSearchParams();
+  
+      if (name) queryParams.set('name', name);
+      if (type) queryParams.set('type', type);
+      if (dimension) queryParams.set('dimension', dimension);
+  
+      const queryString = queryParams.toString();
+      if (queryString) {
+        apiUrl += `?${queryString}`;
+      }
+  
+      return this.fetchAllPages<Location>(apiUrl, this.objToLocation.bind(this));
+    }
+      
+    getAllEpisodes(
+      name?: string,
+      episode?: string
+    ): Observable<Episode[]> {
+  
+      let apiUrl = `${this.BASE_URL}/episode/`;
+  
+      const queryParams = new URLSearchParams();
+  
+      if (name) queryParams.set('name', name);
+      if (episode) queryParams.set('episode', episode);
+  
+      const queryString = queryParams.toString();
+      if (queryString) {
+        apiUrl += `?${queryString}`;
+      }
+  
+      return this.fetchAllPages<Episode>(apiUrl, this.objToEpisode.bind(this));
+    }
+      
+      getCharacterById(id: number): Observable<Character> {
+        return this.http.get<any>(`${this.BASE_URL}/character/${id}`).pipe(
+          map((data: any) => this.objToCharacter(data))
+        );
+      }
+      
+      getLocationById(id: number): Observable<Location> {
+        return this.http.get<any>(`${this.BASE_URL}/location/${id}`).pipe(
+          map((data: any) => this.objToLocation(data))
+        );
+      }
+      
+      getEpisodeById(id: number): Observable<Episode> {
+        return this.http.get<any>(`${this.BASE_URL}/episode/${id}`).pipe(
+          map((data: any) => this.objToEpisode(data))
+        );
+      }
+
+      private fetchAllPages<T>(
+        url: string,
+        conversionFn: (obj: any) => T,
+      ): Observable<T[]> {
+        const items: T[] = [];
         return this.http.get<any>(url).pipe(
-            switchMap((data: any) => {
+          switchMap((data: any) => {
             const results = data.results || [];
-            characters.push(...this.obj2ArrayCharacters(results));
-    
+            results.forEach((result: any) => {
+              items.push(conversionFn(result));
+            });
+      
             const nextPageUrl = data.info?.next;
             if (nextPageUrl) {
-              return this.fetchAllPages(nextPageUrl, characters);
+              return this.fetchAllPages<T>(nextPageUrl, conversionFn).pipe(
+                map((subItems: T[]) => {
+                  items.push(...subItems);
+                  return items;
+                })
+              );
             } else {
-              return of(characters);
+              return of(items);
             }
           })
         );
-    }
-/*
-    getCocktailById(id: string): Observable<Cocktail> {
-        return this.http.get(this.BASE_URL + '/lookup.php?i=' + id).pipe(
-            filter( (data: any) => data.drinks != null),
-            map( (data: any) => ({
-                id: data.drinks[0].idDrink,
-                name: data.drinks[0].strDrink,
-                description: data.drinks[0].strInstructions,
-                alcoholic: data.drinks[0].strAlcoholic === 'Alcoholic',
-                img: data.drinks[0].strDrinkThumb
-            }) )
-        )
-    }
-
-    getCocktailsWith(): Observable<Cocktail[]> {
-        return this.getCocktails().pipe(
-            map( (cocktails: Cocktail[]) => cocktails.filter( (el: Cocktail) => el.alcoholic ))
-        )
-    }
-
-    getCocktailsWithout(): Observable<Cocktail[]> {
-        return this.getCocktails().pipe(
-            map( (cocktails: Cocktail[]) => cocktails.filter( (el: Cocktail) => ! el.alcoholic ))
-        )
-    }
-
-    getCocktailsContains(search: string): Observable<Cocktail[]> {
-        return this.getCocktails().pipe(
-            map( (cocktails: Cocktail[]) => cocktails.filter( (el: Cocktail) => el.name.toLocaleLowerCase().indexOf(search.toLocaleLowerCase()) >= 0 ))
-        )
-    }*/
-
-    protected obj2ArrayCharacters(obj: any): Character[] {
-        console.log(obj)
-        return obj.map((character: any): Character => ({
-          id: character.id,
-          name: character.name,
-          status: character.status,
-          species: character.species,
-          type: character.type,
-          gender: character.gender,
-          origin: character.origin,
-          location: character.location,
-          image: character.image,
-          episode: character.episode
-        }));
       }
+
+protected objToCharacter(obj: any): Character {
+  return {
+    id: obj.id,
+    name: obj.name,
+    status: obj.status,
+    species: obj.species,
+    type: obj.type,
+    gender: obj.gender,
+    origin: obj.origin,
+    location: obj.location,
+    image: obj.image,
+    episode: obj.episode
+  };
+}
+
+protected objToLocation(obj: any): Location {
+  return {
+    id: obj.id,
+    name: obj.name,
+    type: obj.type,
+    dimension: obj.dimension,
+    residents: obj.residents
+  };
+}
+
+protected objToEpisode(obj: any): Episode {
+  return {
+    id: obj.id,
+    name: obj.name,
+    air_date: obj.air_date,
+    episode: obj.episode,
+    characters: obj.characters
+  };
+}
 }
