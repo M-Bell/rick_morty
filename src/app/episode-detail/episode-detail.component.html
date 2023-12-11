@@ -7,8 +7,10 @@
     <div *ngIf="episode.characters && episode.characters.length > 0">
       <h3>Characters</h3>
       <ul>
-        <li *ngFor="let characterUrl of episode.characters">
-          <a [href]="characterUrl" target="_blank" style="color: black;">Character URL</a>
+        <li *ngFor="let episode of episode.characters">
+          <a [routerLink]="'/character/' + episode.id" style="color: black;">
+            {{ episode.name }}
+          </a>
         </li>
       </ul>
     </div>
