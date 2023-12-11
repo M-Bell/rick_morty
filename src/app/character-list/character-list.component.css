@@ -1,6 +1,6 @@
 .character-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); /* Adjust the column width as needed */
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr)); /* Adjust the column width as needed */
     gap: 16px; /* Adjust the gap between items as needed */
 }
 

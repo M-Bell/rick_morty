@@ -1,16 +1,16 @@
 .character-block{
-    width: fit-content;
-    display: block;
+    display: flex;
     justify-content: center;
 }
 
 .character-block-text{
+    width: 60%;
     margin: 5%;
     padding: 0;
 }
 
 .character-block-image{
-    width: 60%;
+    width: 50%;
     margin: 5% 5%;
 }
 
