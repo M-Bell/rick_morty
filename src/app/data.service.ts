@@ -94,7 +94,13 @@ export class DataService {
           const episodesString: string = episodeIds.join(',');
           console.log(episodesString)
           return this.http.get<any>(`${this.BASE_URL}/episode/${episodesString}`).pipe(
-            map((episodesData: any[]) => episodesData.map(data => this.objToEpisode(data)))
+            map((data: any | any[]) => {
+              if (Array.isArray(data)) {
+                return data.map(item => this.objToEpisode(item));
+              } else {
+                return [this.objToEpisode(data)];
+              }
+            })
           );
         })
       );
@@ -111,7 +117,36 @@ export class DataService {
           const characterString: string = characterIds.join(',');
           console.log(characterString)
           return this.http.get<any>(`${this.BASE_URL}/character/${characterString}`).pipe(
-            map((episodesData: any[]) => episodesData.map(data => this.objToCharacter(data)))
+            map((data: any | any[]) => {
+              if (Array.isArray(data)) {
+                return data.map(item => this.objToCharacter(item));
+              } else {
+                return [this.objToCharacter(data)];
+              }
+            })
+          );
+        })
+      );
+    }
+
+    getLocationCharactersByLocationId(id: number): Observable<Character[]> {
+      return this.getLocationById(id).pipe(
+        switchMap((location: Location) => {
+          const characterIds: number[] = location.residents.map((characterUrl: string) => {
+            const splitUrl = characterUrl.split('/');
+            return parseInt(splitUrl[splitUrl.length - 1], 10);
+          });
+
+          const characterString: string = characterIds.join(',');
+          console.log(characterString)
+          return this.http.get<any>(`${this.BASE_URL}/character/${characterString}`).pipe(
+            map((data: any | any[]) => {
+              if (Array.isArray(data)) {
+                return data.map(item => this.objToCharacter(item));
+              } else {
+                return [this.objToCharacter(data)];
+              }
+            })
           );
         })
       );
