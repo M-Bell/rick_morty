@@ -19,7 +19,7 @@
       <h3>Episodes</h3>
       <ul>
         <li *ngFor="let episode of character.episode">
-          <a [href]="episode" target="_blank" style="color: black;">Episode URL</a>
+          <a [routerLink]="episode" target="_blank" style="color: black;">Episode URL</a>
         </li>
       </ul>
     </div>

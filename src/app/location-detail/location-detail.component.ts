@@ -21,6 +21,6 @@ export class LocationDetailComponent {
       id = params['id'];
     });
 
-    this.dataService.getLocationById(id-1).subscribe(val => this.location = val);
+    this.dataService.getLocationById(id).subscribe(val => this.location = val);
   }
 }

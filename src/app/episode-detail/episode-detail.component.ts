@@ -21,6 +21,6 @@ export class EpisodeDetailComponent {
       id = params['id'];
     });
 
-    this.dataService.getEpisodeById(id-1).subscribe(val => this.episode = val);
+    this.dataService.getEpisodeById(id).subscribe(val => this.episode = val);
   }
 }

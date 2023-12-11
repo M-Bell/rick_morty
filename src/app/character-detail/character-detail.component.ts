@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-character-detail',
@@ -22,8 +23,9 @@ export class CharacterDetailComponent implements OnInit {
     });
 
     //-----Change to getCharacterById-----
-    this.character = this.dataService.getAllCharacters().subscribe(val => {
-      this.character = val.at(id-1)
-    });
+    this.character = this.dataService.getCharacterById(id).subscribe(val => this.character = val);
   }
+
+  
+  
 }
