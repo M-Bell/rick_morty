@@ -1,0 +1,15 @@
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); /* Adjust the column width as needed */
+    gap: 16px; /* Adjust the gap between items as needed */
+}
+
+.character-instance {
+    width: 90%; /* Ensure the width of the child item takes the full width of the grid cell */
+    margin: 5%;
+    padding: 0;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column; /* or row, depending on your design */
+    justify-content: space-between; /* or other flex properties based on your design */
+}

@@ -1,10 +1,7 @@
 .character-block{
-    
-    width: 60%;
-    margin: 2%;
-    padding: 0;
-    background-color: lightgray;
-    display: flex;
+    width: fit-content;
+    display: block;
+    justify-content: center;
 }
 
 .character-block-text{
@@ -13,7 +10,7 @@
 }
 
 .character-block-image{
-    width: 40%;
+    width: 60%;
     margin: 5% 5%;
 }
 

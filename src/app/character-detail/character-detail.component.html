@@ -20,7 +20,7 @@
       <ul>
         <li *ngFor="let episode of character.episode">
           <a [routerLink]="'/episode/' + episode.id" style="color: black;">
-            {{ episode.name }}
+           {{episode.episode}} {{ episode.name }}
           </a>
         </li>
       </ul>
