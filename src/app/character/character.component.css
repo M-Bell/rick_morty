@@ -1,0 +1,26 @@
+.character-block{
+    
+    width: 60%;
+    margin: 2%;
+    padding: 0;
+    background-color: lightgray;
+    display: flex;
+}
+
+.character-block-text{
+    margin: 5%;
+    padding: 0;
+}
+
+.character-block-image{
+    width: 40%;
+    margin: 5% 5%;
+}
+
+.character-block-name{
+    font-weight: 600;
+}
+
+.character-block-link{
+    font-weight: 300;
+}

@@ -1,5 +1,7 @@
-<div class="character">
-    <h3>Name: {{ character?.name }}</h3>
-    <img [src]="character?.image" alt="Character Image">
-    <a [routerLink]="detailUrl" style="color: blue;">About</a>
+<div class="character-block">
+    <img class="character-block-image" [src]="character?.image" alt="Character Image">
+    <div class="character-block-text">
+        <p class="character-block-name"> {{ character?.name }}</p>
+        <a class="character-block-link" [routerLink]="detailUrl" style="color: blue;">About</a>
+    </div>
 </div>
