@@ -27,10 +27,10 @@ ngOnInit(): void {
     })
   ).subscribe();
 }
-printLetter(letter: string) {
+filterCharacters(letter: string) {
   this.characters = this.charactersOriginal.filter(char => char.name.startsWith(letter));
 }
-printClear() {
+resetFilter() {
   this.characters = this.charactersOriginal;
 }
 }
