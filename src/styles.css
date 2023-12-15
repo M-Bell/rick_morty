@@ -7,6 +7,18 @@ content, header, footer, div {
     padding: 0px;
 }
 
+body{
+    margin: 0; /* Remove default body margin */ 
+    padding: 0; /* Remove default body padding */ 
+    background-image: url('https://lh3.googleusercontent.com/6b6mr9je_0990RMXCgiyIaZZQNIfs2-BgqnxacZfZuPX1iImeRlzb67NRX3y1hB18jWCtOjY6BNmR5SkAY1DH9BBqQ=s1280-w1280-h800'); 
+    /* Replace with the path to your image */ 
+    background-size: cover; /* Cover the entire viewport */ 
+    background-attachment: fixed; /* Make the background fixed as you scroll */
+    background-position: center; /* Center the background image */
+    background-color: rgba(255,255,255,0.2);
+    background-blend-mode: lighten;
+}
+
 a {
     color: white;
     text-decoration: none;
