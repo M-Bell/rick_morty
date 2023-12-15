@@ -1,8 +1,18 @@
-<h3>Character list</h3>
-
-<div class="character-grid">
-    <div class="character-instance" *ngFor="let character of characters">
-        <app-character [character]="character"></app-character>
+<body>
+    <h3 class="outline">Character list</h3>
+<div class="outline" style="display: flex;">
+    <span *ngFor="let letter of alphabet" (click)="printLetter(letter)" style="cursor: pointer; margin: 5px;">{{ letter }}</span>
+    <span (click)="printClear()" style="cursor: pointer; margin: 5px;">CLEAR</span>
+  </div>
+<div class="container">
+    <div class="row">
+      <ng-container *ngFor="let character of characters">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+          <div class="character-instance">
+            <app-character [character]="character"></app-character>
+          </div>
+        </div>
+      </ng-container>
     </div>
-</div>
-
+  </div>
+</body>

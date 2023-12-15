@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Character } from '../character';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-character-list',
@@ -10,14 +11,26 @@ import { Character } from '../character';
 export class CharacterListComponent implements OnInit {
 
 characters: Array<any>;
+charactersOriginal: Array<any>;
 
 constructor(private dataservice: DataService){
   this.characters = new Array<Character>
+  this.charactersOriginal = new Array<Character>
 }
-
+alphabet: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 ngOnInit(): void {
-  this.dataservice.getAllCharacters().subscribe(val => this.characters = val)
-  console.log(this.characters.length)
+  this.dataservice.getAllCharacters().pipe(
+    tap((val) => {
+      this.characters = val;
+      this.charactersOriginal = [...val]; // Assign a copy to charactersOriginal
+      console.log('Received characters:', this.characters);
+    })
+  ).subscribe();
 }
-
+printLetter(letter: string) {
+  this.characters = this.charactersOriginal.filter(char => char.name.startsWith(letter));
+}
+printClear() {
+  this.characters = this.charactersOriginal;
+}
 }
