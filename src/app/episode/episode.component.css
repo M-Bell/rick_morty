@@ -1,0 +1,26 @@
+.episode-container{
+    background: lightgray;
+    margin: 1% auto;
+    width: 35%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 1% 0;
+}
+
+.episode-container-name{
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 1%;
+}
+
+.episode-container-link{
+    align-self: center;
+    font-weight: 300;
+    margin-top: 1%;
+}
+
+span{
+    margin: 0 2%;
+    border-bottom: 1px solid black;
+}
