@@ -1,9 +1,9 @@
 <div class="episode-details-wrapper">
   <div class="episode-details" *ngIf="episode">
-    <h2 class="episode-details-name">{{ episode.name }}</h2>
+    <h2 class="outline episode-details-name">{{ episode.name }}</h2>
     
     <div class="episode-details-block-info">
-      <h3 class="episode-details-block-name">Details</h3>
+      <h3 class="outline episode-details-block-name">Details</h3>
       <div class="episode-details-info">
         <ul class="episode-details-info-list">
           <li><strong>Air Date:</strong> {{ episode.air_date }}</li>
@@ -16,11 +16,11 @@
 
 
     <div *ngIf="episode.characters && episode.characters.length > 0" class="episode-details-block-info">
-      <h3 class="episode-details-block-name">Characters</h3>
+      <h3 class="outline episode-details-block-name">Characters</h3>
       <div class="episode-details-character-list">
-        <ul>
+        <ul class="episode-details-info-list">
           <li *ngFor="let episode of episode.characters">
-            <a [routerLink]="'/character/' + episode.id" style="color: black;">
+            <a class="episode-link" [routerLink]="'/character/' + episode.id">
               {{ episode.name }}
             </a>
           </li>

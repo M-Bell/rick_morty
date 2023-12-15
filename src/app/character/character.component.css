@@ -18,17 +18,21 @@
 
 .character-block-name{
     font-family: "Courier", sans-serif;
+    color: rgb(235, 228, 128);
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     font-size: 20px;
     font-weight: 600;
 }
 
 .character-block-link{
     font-family: "Courier", sans-serif;
-    color: #043c6e;
+    color: #a6cccc;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     font-size: 18px;
     font-weight: 300;
 }
 
 .character-block-link:hover{
     font-weight: 700;
+    text-shadow: -1px -1px 0 #043c6e, 1px -1px 0 #043c6e, -1px 1px 0 #043c6e, 1px 1px 0 #043c6e;
 }

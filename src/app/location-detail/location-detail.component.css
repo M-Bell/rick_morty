@@ -19,19 +19,24 @@
 .location-details-block-info{
     display: flexbox;
     margin: 3% auto;
-    width: 60%;
+    width: 80%;
     justify-content: center;
     align-items: center;
-    background-color: lightgrey;   
+    background-color: rgb(107, 113, 50, 0.9);
+    color: rgb(235, 228, 128);
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     border-radius: 20px;
     padding: 0 2%;
     padding-bottom: 2%;
+    font-family: "Courier", sans-serif;
+    font-size: 18px;
+    border: 2px solid black;
 }
 
 .location-details-block-name{
     text-align: center;
     padding: 2% 0%;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #ebe480;
 }
 
 .location-details-name{
@@ -59,15 +64,36 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background-color: #888; /* Color of the scrollbar thumb */
+    background-color: #4f5425; /* Color of the scrollbar thumb */
     border-radius: 5px; /* Rounded corners of the thumb */
   }
   
   ::-webkit-scrollbar-track {
-    background-color: lightgrey; /* Color of the scrollbar track */
+    background-color: rgb(107, 113, 50, 0.7);
   }
+
   .character-details-image-wrapper {
     position: relative;
     width: 60%; /* Adjust total width as a percentage of the viewport or container */
     margin: 0 auto; /* Center horizontally */
+  }
+
+  li{
+    margin-bottom: 2%;
+    padding-left: 32px;
+    background: url('../../assets/rick_small.png') no-repeat left center;
+    
+  }
+  
+  .outline {
+    font-family: "RickMorty", serif;
+    color: rgb(235, 228, 128);
+    font-weight: 300;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    display: flex;
+    justify-content: center;
+  }
+
+  .episode-link{
+    color: rgb(235, 228, 128);
   }

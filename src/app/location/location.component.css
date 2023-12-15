@@ -1,5 +1,5 @@
 .location-container{
-    background: rgb(235, 228, 128, 0.9);
+    background-color: rgb(107, 113, 50, 0.9);
     margin: 1% auto;
     width: 80%;
     border-radius: 20px;
@@ -11,18 +11,20 @@
 
 .location-container-name{
     font-family: "Courier", sans-serif;
-    text-align: center;
+    color: rgb(235, 228, 128);
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    font-size: 20px;
     font-weight: 600;
-    margin-bottom: 1%;
+    text-align: center;
 }
 
 .location-container-link{
     font-family: "Courier", sans-serif;
+    color: #a6cccc;
     align-self: center;
-    color: #043c6e;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     font-size: 18px;
     font-weight: 300;
-    margin-top: 1%;
 }
 
 span{
@@ -33,4 +35,5 @@ span{
 
 .location-container-link:hover{
     font-weight: 700;
+    text-shadow: -1px -1px 0 #043c6e, 1px -1px 0 #043c6e, -1px 1px 0 #043c6e, 1px 1px 0 #043c6e;
 }

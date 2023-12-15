@@ -4,10 +4,10 @@
     <div class="background-image"></div>
     <img class="character-details-image" [src]="character.image" alt="{{ character.name }} image" style="max-width: 300px;">
   </div>
-    <h2 class="character-details-name">{{ character.name }}</h2>
+    <h2 class="outline character-details-name">{{ character.name }}</h2>
 
     <div class="character-details-block-info">
-      <h3 class="character-details-block-name">Details</h3>
+      <h3 class="outline character-details-block-name">Details</h3>
       <div class="character-details-info">
         <ul class="character-details-info-list">
           <li><strong>Status:</strong> {{ character.status }}</li>
@@ -23,12 +23,12 @@
     </div>
   
     <div class="character-details-block-info">
-      <h3 class="character-details-block-name">Episodes</h3>
+      <h3 class="outline character-details-block-name">Episodes</h3>
       <div class="character-details-episode-list">
-        <ul>
+        <ul class="character-details-info-list">
           <li *ngFor="let episode of character.episode">
-            <a [routerLink]="'/episode/' + episode.id" style="color: black;">
-            {{episode.episode}} {{ episode.name }}
+            <a class="episode-link" [routerLink]="'/episode/' + episode.id">
+            <strong>{{episode.episode}}</strong> {{ episode.name }}
             </a>
           </li>
         </ul>
