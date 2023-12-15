@@ -1,0 +1,7 @@
+
+.background-image-style {
+    background-image: url('https://as1.ftcdn.net/v2/jpg/05/09/33/40/1000_F_509334038_G0SAyLFtODpMXHbE0tnjsnkBYnaReI7y.jpg'); /* Replace 'path-to-your-image.jpg' with the actual path to your image */
+    background-size: cover; /* Adjust the background size as needed */
+    color: white; /* Set text color to contrast with the image */
+    /* Add any other styling properties you need */
+  }
