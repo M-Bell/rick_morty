@@ -1,17 +1,33 @@
-<div *ngIf="episode">
-    <h2>{{ episode.name }}</h2>
-    <p><strong>Episode ID:</strong> {{ episode.id }}</p>
-    <p><strong>Air Date:</strong> {{ episode.air_date }}</p>
-    <p><strong>Episode:</strong> {{ episode.episode }}</p>
-  
-    <div *ngIf="episode.characters && episode.characters.length > 0">
-      <h3>Characters</h3>
-      <ul>
-        <li *ngFor="let episode of episode.characters">
-          <a [routerLink]="'/character/' + episode.id" style="color: black;">
-            {{ episode.name }}
-          </a>
-        </li>
-      </ul>
+<div class="episode-detail-wrapper">
+  <div class="episode-details" *ngIf="episode">
+    <h2 class="episode-details-name">{{ episode.name }}</h2>
+    <p></p>
+    <p></p>
+    
+    <div class="episode-details-block-info">
+      <h3 class="episode-details-block-name">Details</h3>
+      <div class="episode-details-info">
+        <ul class="episode-details-info-list">
+          <li><strong>Air Date:</strong> {{ episode.air_date }}</li>
+        </ul>
+        <ul class="episode-details-info-list">
+          <li><strong>Episode:</strong> {{ episode.episode }}</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div *ngIf="episode.characters && episode.characters.length > 0" class="episode-details-block-info">
+      <h3 class="episode-details-block-name">Characters</h3>
+      <div class="episode-details-character-list">
+        <ul>
+          <li *ngFor="let episode of episode.characters">
+            <a [routerLink]="'/character/' + episode.id" style="color: black;">
+              {{ episode.name }}
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
+</div>
