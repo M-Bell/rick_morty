@@ -1,17 +1,31 @@
-<div *ngIf="location">
-    <h2>{{ location.name }}</h2>
-    <p><strong>Location ID:</strong> {{ location.id }}</p>
-    <p><strong>Type:</strong> {{ location.type }}</p>
-    <p><strong>Dimension:</strong> {{ location.dimension }}</p>
-  
-    <div *ngIf="location.residents && location.residents.length > 0">
-      <h3>Residents</h3>
-      <ul>
-        <li *ngFor="let loc of location.residents">
-          <a [routerLink]="'/character/' + loc.id" style="color: black;">
-            {{ loc.name }}
-          </a>
-        </li>
-      </ul>
+<div class="location-details-wrapper">
+  <div class="location-details" *ngIf="location">
+    <h2 class="location-details-name">{{ location.name }}</h2>
+
+    <div class="location-details-block-info">
+      <h3 class="location-details-block-name">Details</h3>
+      <div class="location-details-info">
+        <ul class="location-details-info-list">
+          <li><strong>Type:</strong> {{ location.type }}</li>
+        </ul>
+        <ul class="location-details-info-list">
+          <li><strong>Dimension:</strong> {{ location.dimension }}</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div *ngIf="location.residents && location.residents.length > 0" class="location-details-block-info">
+      <h3 class="location-details-block-name">Residents</h3>
+      <div class="location-details-character-list">
+        <ul>
+          <li *ngFor="let loc of location.residents">
+            <a [routerLink]="'/character/' + loc.id" style="color: black;">
+              {{ loc.name }}
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
+</div>
