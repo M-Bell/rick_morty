@@ -1,0 +1,15 @@
+/* Define a keyframe animation for continuous flipping */
+@keyframes flip {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  /* Apply the flip animation to the image */
+  .flip {
+    transition: transform 1s ease-in-out; /* Smooth transition between flips */
+    animation: flip 2s infinite linear; /* Run the flip animation continuously */
+  }
