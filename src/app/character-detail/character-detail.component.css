@@ -11,12 +11,6 @@
     align-items: center;
 }
 
-
-.character-details-image-wrapper{
-    margin-top: 2%;
-    text-align: center;
-}
-
 .character-details-info{
     display: flex;
     justify-content: space-around;
@@ -70,4 +64,34 @@
   
   ::-webkit-scrollbar-track {
     background-color: lightgrey; /* Color of the scrollbar track */
+  }
+
+  .character-details-image-wrapper {
+    position: relative;
+    width: 60%; /* Adjust total width as a percentage of the viewport or container */
+    margin: 0 auto; /* Center horizontally */
+  }
+  
+  .background-image {
+    position: relative;
+    width: 100%; /* Increase the size of the portal background */
+    padding-bottom: 110%; /* Maintain a square aspect ratio (1:1) */
+    background-image: url('src\assets\portal.png'); /* Replace 'path/to/portal.svg' with your actual image path */
+    background-size: contain; /* Adjust as needed */
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%; /* Make the background circular */
+    overflow: hidden; /* Ensure inner content does not overflow */
+  }
+  
+  .character-details-image {
+    position: absolute;
+    top: 50%; /* Adjust as needed to center vertically */
+    left: 50%; /* Adjust as needed to center horizontally */
+    transform: translate(-50%, -50%); /* Center the inner image */
+    width: 70%; /* Width of the inner image as a percentage */
+    max-width: 300px; /* Set a maximum width if needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1; /* Place the inner image above the background */
+    border-radius: 50%; /* Make the inner image circular */
   }
