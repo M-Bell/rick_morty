@@ -4,9 +4,10 @@
 }
 
 .character-block-text{
+    display: flex;
+    flex-direction: column;
     width: 60%;
     margin: 5%;
-    padding: 0;
 }
 
 .character-block-image{
@@ -16,9 +17,18 @@
 }
 
 .character-block-name{
+    font-family: "Courier", sans-serif;
+    font-size: 20px;
     font-weight: 600;
 }
 
 .character-block-link{
+    font-family: "Courier", sans-serif;
+    color: #043c6e;
+    font-size: 18px;
     font-weight: 300;
+}
+
+.character-block-link:hover{
+    font-weight: 700;
 }

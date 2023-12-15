@@ -1,21 +1,26 @@
 .location-container{
-    background: lightgray;
+    background: rgb(235, 228, 128, 0.9);
     margin: 1% auto;
-    width: 35%;
+    width: 80%;
     border-radius: 20px;
+    border: 2px solid black; /* Thin black outline */
     display: flex;
     flex-direction: column;
     padding: 1% 0;
 }
 
 .location-container-name{
+    font-family: "Courier", sans-serif;
     text-align: center;
     font-weight: 600;
     margin-bottom: 1%;
 }
 
 .location-container-link{
+    font-family: "Courier", sans-serif;
     align-self: center;
+    color: #043c6e;
+    font-size: 18px;
     font-weight: 300;
     margin-top: 1%;
 }
@@ -23,4 +28,9 @@
 span{
     margin: 0 2%;
     border-bottom: 1px solid black;
+}
+
+
+.location-container-link:hover{
+    font-weight: 700;
 }

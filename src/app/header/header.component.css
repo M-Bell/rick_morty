@@ -1,0 +1,14 @@
+.header-text{
+    font-family: "RickMorty", serif;
+    color: rgb(235, 228, 128);
+    font-weight: 300;
+    font-size: 28px;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+
+}
+
+.header-text:hover {
+    font-size: 28px;
+    font-weight: 500; /* Change the color on hover */
+    text-shadow: -2px -2px 0 #043c6e, 2px -2px 0 #043c6e, -2px 2px 0 #043c6e, 2px 2px 0 #043c6e;
+}

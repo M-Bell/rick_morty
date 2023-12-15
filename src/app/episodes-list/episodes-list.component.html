@@ -1,11 +1,12 @@
+<h3 class="outline outline-name">Episode list</h3>
 <div class="outline" style="display: flex;">
-    <span *ngFor="let letter of seasons" (click)="filterSeasons(letter)" style="cursor: pointer; margin: 5px;">{{ letter }}</span>
-    <span (click)="resetFilter()" style="cursor: pointer; margin: 5px;">CLEAR</span>
-  </div>
+    <span class="outline-filter" *ngFor="let letter of seasons" (click)="filterSeasons(letter)" style="cursor: pointer; margin: 5px;">{{ letter }}</span>
+    <span class="outline-filter" (click)="resetFilter()">CLEAR</span>
+</div>
 <div class="row">
-    <div class="col-md-6" *ngFor="let episode of episodes; let i = index;">
-      <app-episode [episode]="episode"></app-episode>
-      <!-- Add a line break after every 2 episodes -->
-      <div *ngIf="(i + 1) % 2 === 0" class="w-100 d-md-none d-lg-none"></div>
-    </div>
+  <div class="col-md-6" *ngFor="let episode of episodes; let i = index;">
+    <app-episode [episode]="episode"></app-episode>
+    <!-- Add a line break after every 2 episodes -->
+    <div *ngIf="(i + 1) % 2 === 0" class="w-100 d-md-none d-lg-none"></div>
   </div>
+</div>

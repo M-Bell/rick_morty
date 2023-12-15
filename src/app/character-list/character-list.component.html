@@ -1,13 +1,13 @@
-<body>
-    <h3 class="outline" style="font-family: 'YourFont';">Character list</h3>
-<div class="outline" style="display: flex;">
-    <span *ngFor="let letter of alphabet" (click)="filterCharacters(letter)" style="cursor: pointer; margin: 5px;">{{ letter }}</span>
-    <span (click)="resetFilter()" style="cursor: pointer; margin: 5px;">CLEAR</span>
+
+  <h3 class="outline outline-name">Character list</h3>
+  <div class="outline" style="display: flex;">
+    <span class="outline-filter" *ngFor="let letter of alphabet" (click)="filterCharacters(letter)">{{ letter }}</span>
+    <span class="outline-filter" (click)="resetFilter()" style="cursor: pointer; margin: 5px;">CLEAR</span>
   </div>
-<div class="container">
+  <div class="container">
     <div class="row">
       <ng-container *ngFor="let character of characters">
-        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+        <div class=" col-md-4 col-sm-6 col-12">
           <div class="character-instance">
             <app-character [character]="character"></app-character>
           </div>
@@ -15,4 +15,3 @@
       </ng-container>
     </div>
   </div>
-</body>
