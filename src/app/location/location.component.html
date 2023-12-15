@@ -1,4 +1,6 @@
-<div>
-    <h3>Name: {{ location?.name }}</h3>
-    <a [routerLink]="detailUrl" style="color: blue;">About</a>
+<div class="location-container">
+    <span>
+    <h4 class="location-container-name"> {{ location?.name }}</h4>
+    </span>
+    <a class="location-container-link" [routerLink]="detailUrl" style="color: blue;">About</a>
 </div>
