@@ -12,6 +12,7 @@
 .character-block-image{
     width: 50%;
     margin: 5% 5%;
+    border-radius: 10px;
 }
 
 .character-block-name{
