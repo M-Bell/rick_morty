@@ -3,8 +3,6 @@
     color: rgb(235, 228, 128);
     font-weight: 300;
     font-size: 28px;
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-
 }
 
 .header-text:hover {

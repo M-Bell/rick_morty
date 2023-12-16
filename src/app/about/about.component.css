@@ -8,24 +8,17 @@
   background-color: rgb(107, 113, 50, 0.9);
   border: 2px solid black;
   border-radius: 20px;
-
-  font-family: "Courier", sans-serif;
-  color: rgb(235, 228, 128);
+  padding-left: 5%;
   font-size: 36px;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
-.about-list{
-  list-style: none;
-}
-
-.about-title{
+.about-title {
   text-align: center;
   margin: 1% 0% 0% 0%;
   font-weight: 600;
 }
 
-.about-list-item{
+.about-list-item {
   margin-bottom: 2%;
   padding-left: 55px;
   background: url('../../assets/rick_icon.png') no-repeat left center; 

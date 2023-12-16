@@ -1,0 +1,45 @@
+.home-page-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-page-header{
+    padding-top: 1%;
+    padding-bottom: 2%;
+    background-color: #6b7132;
+    display: flex;
+    justify-content: center;
+}
+
+.home-page-header-text {
+    font-size: 18px;
+    width: 70%;
+}
+
+.home-info-block{
+    font-size: 18px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-top: 5%;
+    background-color: rgb(107, 113, 50, 0.9);
+    width: 50%;
+}
+
+.home-list-title{
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+}
+
+.home-list{
+    padding-left: 5%;
+}
+
+.home-list-item{
+    margin-bottom: 2%;
+    padding-left: 40px;
+    background: url('../../assets/rick_small.png') no-repeat left center; 
+    background-size: 32px;
+}

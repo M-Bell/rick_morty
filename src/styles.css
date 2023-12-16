@@ -8,6 +8,9 @@ content, header, footer, div {
 }
 
 body{
+    font-family: "Courier", sans-serif;
+    color: rgb(235, 228, 128);
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     margin: 0; /* Remove default body margin */ 
     padding: 0; /* Remove default body padding */ 
     background-image: url('https://lh3.googleusercontent.com/6b6mr9je_0990RMXCgiyIaZZQNIfs2-BgqnxacZfZuPX1iImeRlzb67NRX3y1hB18jWCtOjY6BNmR5SkAY1DH9BBqQ=s1280-w1280-h800'); 
@@ -17,6 +20,19 @@ body{
     background-position: center; /* Center the background image */
     background-color: rgba(255,255,255,0.2);
     background-blend-mode: lighten;
+}
+
+.outline {
+    font-family: "RickMorty", serif;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -59,11 +75,6 @@ img.flip:hover {
     color: #ebe480;
 }
 
-.titre {
-    color: black;
-    font-size: large;
-    font-weight: bold;
-}
 
 .padding-10 {
     padding: 10px 0px 10px 0px;

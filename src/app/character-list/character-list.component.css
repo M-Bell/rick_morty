@@ -19,14 +19,7 @@ h3 {
   font-size: 42px;
 }
 
-.outline {
-  font-family: "RickMorty", serif;
-  color: rgb(235, 228, 128);
-  font-weight: 300;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-  display: flex;
-  justify-content: center;
-}
+
 
 .outline-filter{
   font-size: 26px;

@@ -23,12 +23,9 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(107, 113, 50, 0.9);
-    color: rgb(235, 228, 128);
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     border-radius: 20px;
     padding: 0 2%;
     padding-bottom: 2%;
-    font-family: "Courier", sans-serif;
     font-size: 18px;
     border: 2px solid black;
 }
@@ -108,15 +105,6 @@
     padding-left: 34px;
     background: url('../../assets/rick_small.png') no-repeat left center;
     background-size: 32px;
-  }
-  
-  .outline {
-    font-family: "RickMorty", serif;
-    color: rgb(235, 228, 128);
-    font-weight: 300;
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-    display: flex;
-    justify-content: center;
   }
 
   .episode-link{

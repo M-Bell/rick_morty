@@ -10,26 +10,23 @@
 }
 
 .episode-container-name{
-    font-family: "Courier", sans-serif;
-    color: rgb(235, 228, 128);
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    margin-bottom: 1%;
     font-size: 20px;
     font-weight: 600;
     text-align: center;
 }
 
 .episode-container-link{
-    font-family: "Courier", sans-serif;
     color: #a6cccc;
+    margin-top: 2%;
     align-self: center;
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     font-size: 18px;
     font-weight: 300;
 }
 
 span{
     margin: 0 2%;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid  rgb(235, 228, 128);
 }
 
 

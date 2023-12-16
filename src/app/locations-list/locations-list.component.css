@@ -1,11 +1,3 @@
-.outline {
-    font-family: "RickMorty", serif;
-    color: rgb(235, 228, 128);
-    font-weight: 300;
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-    display: flex;
-    justify-content: center;
-  }
 
 .outline-name{
   margin-top: 1%;

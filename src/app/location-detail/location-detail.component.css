@@ -82,17 +82,8 @@
     margin-bottom: 2%;
     padding-left: 32px;
     background: url('../../assets/rick_small.png') no-repeat left center;
-    
   }
   
-  .outline {
-    font-family: "RickMorty", serif;
-    color: rgb(235, 228, 128);
-    font-weight: 300;
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-    display: flex;
-    justify-content: center;
-  }
 
   .episode-link{
     color: rgb(235, 228, 128);
