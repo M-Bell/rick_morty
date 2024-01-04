@@ -10,3 +10,16 @@
     font-weight: 500; /* Change the color on hover */
     text-shadow: -2px -2px 0 #043c6e, 2px -2px 0 #043c6e, -2px 2px 0 #043c6e, 2px 2px 0 #043c6e;
 }
+
+.header-image{
+    margin-left: 4%;
+}
+
+.header-options{
+    display: flex;
+    justify-content: center;
+}
+
+.row{
+    align-content: center;
+}
