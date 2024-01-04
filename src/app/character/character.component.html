@@ -1,7 +1,7 @@
-<div class="character-block">
+<a [routerLink]="detailUrl" class="character-block">
     <img class="character-block-image" [src]="character?.image" alt="Character Image">
     <div class="character-block-text">
         <p class="character-block-name"> {{ character?.name }}</p>
-        <a class="character-block-link" [routerLink]="detailUrl">About</a>
+        <a class="character-block-link">About</a>
     </div>
-</div>
+</a>

@@ -10,6 +10,7 @@
 }
 
 .location-container-name{
+    color: rgb(235, 228, 128);
     margin-bottom: 1%;
     font-size: 20px;
     font-weight: 600;
@@ -31,6 +32,11 @@ span{
 
 
 .location-container-link:hover{
+    font-weight: 700;
+    text-shadow: -1px -1px 0 #043c6e, 1px -1px 0 #043c6e, -1px 1px 0 #043c6e, 1px 1px 0 #043c6e;
+}
+
+.location-container:hover .location-container-link{
     font-weight: 700;
     text-shadow: -1px -1px 0 #043c6e, 1px -1px 0 #043c6e, -1px 1px 0 #043c6e, 1px 1px 0 #043c6e;
 }

@@ -17,6 +17,7 @@
 }
 
 .character-block-name{
+    color: rgb(235, 228, 128);
     font-size: 20px;
     font-weight: 600;
 }
@@ -27,7 +28,7 @@
     font-weight: 300;
 }
 
-.character-block-link:hover{
+.character-block:hover .character-block-link{
     font-weight: 700;
     text-shadow: -1px -1px 0 #043c6e, 1px -1px 0 #043c6e, -1px 1px 0 #043c6e, 1px 1px 0 #043c6e;
 }

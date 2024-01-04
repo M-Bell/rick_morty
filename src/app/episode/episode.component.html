@@ -1,7 +1,7 @@
-<div class="episode-container">
+<a class="episode-container" [routerLink]="detailUrl">
     <span>
     <h5 class="episode-container-name">{{ episode?.name }}</h5>
     <p class="episode-container-name">{{episode?.episode}} </p>
 </span>
-    <a class="episode-container-link" [routerLink]="detailUrl">About</a>
-</div>
+    <a class="episode-container-link" >About</a>
+</a>
