@@ -1,9 +1,15 @@
-<h3 class="outline outline-name">Character list</h3>
+<h3 class="outline outline-name">Location list</h3>
 
+<form class="search-from" [formGroup]="formGroup">
+    <div class="form-group">
+      <input type="text" class="search-form-input" formControlName="search" placeholder="Search locations">
+    </div>
+</form>
 <div class="row">
     <div class="col-md-6" *ngFor="let location of locations; let i = index;">
         <app-location [location]="location"></app-location>
         <!-- Add a line break after every 2 episodes -->
         <div *ngIf="(i + 1) % 2 === 0" class="w-100 d-md-none d-lg-none"></div>
     </div>
+    <p class="empty_list" *ngIf="locations.length === 0">No entries</p>
 </div>

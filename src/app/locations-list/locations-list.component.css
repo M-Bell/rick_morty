@@ -3,3 +3,32 @@
   margin-top: 1%;
   font-size: 42px;
 }
+
+.empty_list{
+  font-family: 'RickMorty';
+  margin-top: 10%;
+  text-align: center;
+  font-size: 36px;
+}
+
+.form-group {
+  display: flex;
+  justify-content:center;
+}
+
+.search-form-input {
+  background-color: rgb(107, 113, 50, 0.9);
+  border-radius: 20px;
+  border: 2px solid black; /* Thin black outline */
+  width: 30%;
+  margin: 0 auto;
+  padding: 10px; /* Add padding for better visual appearance */
+  font-family: "Courier", sans-serif;
+  color: rgb(235, 228, 128);
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  /* Add any additional styles for the input here */
+}
+
+.search-form-input::placeholder {
+  color: rgba(235, 228, 128, 0.7); /* Set the placeholder color with alpha transparency */
+}
